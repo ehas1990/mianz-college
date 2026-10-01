@@ -1,0 +1,793 @@
+/* ===================================================
+   CONVOCATION HERO SLIDER & COUNTDOWN COMPONENT
+   =================================================== */
+
+:root {
+  --primary: #007BFF;
+  --secondary: #6C757D;
+  --background: #F3EED9;
+  --black: #000000;
+  --dark-red: #94191C;
+  --dark-gray: #4E4E4E;
+  --white: #FFFFFF;
+}
+
+/* 1. Header Separation */
+header {
+  position: relative !important;
+  z-index: 9999 !important;
+  background: #0b111e !important;
+  background: linear-gradient(180deg, #090e18 0%, #111a2d 100%) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.convocation-page header {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.convocation-page .wrpabd.convocation-slider {
+  position: relative;
+  top: -118px;
+}
+
+/* 2. Hero Banner Container — Begins strictly AFTER Header, no negative margins */
+.convocation-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.convocation-slider .bx {
+  position: relative;
+  width: 100%;
+  margin-top: 0 !important;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #111a2d;
+}
+
+/* 3. Banner Image Area — Full-width, equal height across all slides, zero distortion */
+.convocation-slider .banner-section-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.convocation-slider .bannerbgvid,
+.convocation-slider .swiperbanner,
+.convocation-slider .swiper-wrapper,
+.convocation-slider .swiper-slide,
+.convocation-slider .bannersld {
+  width: 100%;
+  height: 100% !important;
+  position: relative;
+}
+
+.convocation-slider .bannersld img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 4. Overlay & Hero Content Position */
+.convocation-slider .capdtbg {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+  min-height: 720px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 220px 0 80px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.convocation-slider .container-port-xl {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 4;
+}
+
+.convocation-slider .banner-parent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.convocation-slider .centeral {
+  display: block;
+  align-items: initial;
+}
+
+/* Background watermark text adjustment */
+.convocation-slider .miop {
+  position: absolute;
+  right: 0;
+  font-size: clamp(120px, 22vw, 280px);
+  color: #ffffff;
+  line-height: 1;
+  opacity: 0.08;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'lentra', sans-serif;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Hero Content Area */
+.banner-content-xc {
+  max-width: 680px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Sub-heading */
+.slider-subheading {
+  display: inline-block;
+  font-family: 'Inter Tight', 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--dark-red);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(148, 25, 28, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Main Heading */
+.slider-title,
+.banner-content-xc h1 {
+  font-family: 'Inter Tight', 'Manrope', 'Segoe UI', sans-serif;
+  font-size: clamp(32px, 4.2vw, 54px);
+  font-weight: 900;
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
+}
+
+/* Description */
+.slider-description {
+  font-family: 'Inter Tight', 'Calibri', 'Manrope', sans-serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 500;
+  color: var(--background);
+  line-height: 1.45;
+  margin-bottom: 24px;
+  max-width: 540px;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Action Buttons */
+.slider-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.slider-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 13px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-buttons .btn-primary {
+  background-color: var(--dark-red);
+  color: var(--white);
+  border: 2px solid var(--dark-red);
+  box-shadow: 0 4px 15px rgba(148, 25, 28, 0.4);
+}
+
+.slider-buttons .btn-primary:hover {
+  background-color: #b31d21;
+  border-color: #b31d21;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(148, 25, 28, 0.55);
+}
+
+.slider-buttons .btn-secondary {
+  background-color: var(--white);
+  color: var(--dark-red);
+  border: 2px solid var(--white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.slider-buttons .btn-secondary:hover {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+}
+
+/* ===================================================
+   COUNTDOWN TO GRADUATION DAY — STANDALONE SECTION
+   =================================================== */
+
+.convocation-countdown-section {
+  position: relative;
+  width: 100%;
+  padding: 50px 0 0px;
+  z-index: 10;
+  margin-top: -261px;
+}
+
+.convocation-countdown-section .container-port-xl {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.convocation-countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.convocation-countdown {
+  background: var(--dark-red);
+  border-radius: 24px;
+  padding: 28px 36px;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* Counter Heading */
+.countdown-heading {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+/* Counter Items Row */
+.countdown-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 16px);
+  margin: 20px;
+}
+
+/* Individual Counter Box */
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  border-radius: 14px;
+  padding: 12px clamp(10px, 2.2vw, 22px);
+  min-width: clamp(66px, 14vw, 96px);
+  border: 1px solid rgba(148, 25, 28, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(148, 25, 28, 0.15);
+}
+
+/* Colon Separator */
+.countdown-separator {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ff8b2c;
+  margin-top: -10px;
+  opacity: 0.7;
+  user-select: none;
+}
+
+/* Number Value */
+.countdown-number {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: clamp(26px, 3.8vw, 36px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--dark-red);
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+}
+
+/* Unit Label */
+.countdown-label {
+  font-family: 'Inter Tight', 'Calibri', 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  line-height: 1;
+}
+
+/* Counter Description */
+.countdown-description {
+  font-family: 'Inter Tight', 'Calibri', 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ===================================================
+   RESPONSIVE STYLES
+   =================================================== */
+
+@media screen and (max-width: 991px) {
+
+  .convocation-slider .bx,
+  .convocation-slider .capdtbg {
+    min-height: 640px;
+    padding: 160px 0 60px;
+  }
+
+  .convocation-countdown-section {
+    padding: 40px 0 50px;
+  }
+
+  .convocation-countdown {
+    padding: 24px 24px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .convocation-slider .bx,
+  .convocation-slider .capdtbg {
+    min-height: 580px;
+    padding: 130px 0 50px;
+  }
+
+  .banner-content-xc {
+    margin-bottom: 20px;
+  }
+
+  .slider-subheading {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    padding: 5px 14px;
+    margin-bottom: 12px;
+  }
+
+  .slider-buttons {
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .slider-buttons .btn {
+    flex: 1 1 auto;
+    font-size: 13px;
+    padding: 11px 18px;
+    text-align: center;
+  }
+
+  .convocation-countdown-section {
+    padding: 30px 0 40px;
+  }
+
+  .convocation-countdown {
+    padding: 18px 12px;
+    border-radius: 18px;
+    width: 100%;
+  }
+
+  .countdown-heading {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+  }
+
+  .countdown-items {
+    gap: 4px;
+    margin: 20px;
+  }
+
+  .countdown-item {
+    padding: 8px 4px;
+    min-width: 0;
+    flex: 1 1 0;
+    border-radius: 10px;
+  }
+
+  .countdown-separator {
+    font-size: 14px;
+    margin-top: -6px;
+  }
+
+  .countdown-number {
+    font-size: 20px;
+  }
+
+  .countdown-label {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+
+  .countdown-description {
+    font-size: 12px;
+  }
+}
+
+/* ===================================================
+   JOURNEY TO GRADUATION — ABOUT SECTION & TIMELINE
+   =================================================== */
+
+.submain {
+  position: relative;
+  background-color: #fff;
+  margin-top: -141px;
+}
+
+.convocation-about-section {
+  position: relative;
+  background-image: url("../img/sketch-college.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 280px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.convocation-about-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(243, 238, 217, 0.94) 0%, rgba(255, 255, 255, 0.92) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.convocation-about-section .container-port-xl {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Left Column Intro */
+.about-timeline-intro {
+  padding-right: 30px;
+}
+
+.about-timeline-tag {
+  display: inline-block;
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark-red);
+  margin-bottom: 12px;
+}
+
+.about-timeline-title {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 900;
+  color: #111a2d;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.about-timeline-desc {
+  font-family: 'Inter Tight', 'Calibri', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.about-timeline-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 13px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Right Column Vertical Timeline */
+.convocation-timeline {
+  position: relative;
+  padding-left: 10px;
+}
+
+/* Continuous Vertical Line passing through center of icons */
+.timeline-track-line {
+  position: absolute;
+  left: 35px;
+  top: 30px;
+  bottom: 40px;
+  width: 2px;
+  background: #d8ceb0;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 28px;
+  z-index: 2;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Node */
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  position: relative;
+}
+
+.timeline-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: var(--white);
+  border: 2px solid #d8ceb0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-red);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.timeline-svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--dark-red);
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d8ceb0;
+  border: 2px solid var(--white);
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Timeline Content Card */
+.timeline-content {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 20px 24px;
+  flex: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.timeline-badge {
+  display: inline-block;
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--dark-red);
+  background: var(--background);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.timeline-date {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff8b2c;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.timeline-heading {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #111a2d;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.timeline-text {
+  font-family: 'Inter Tight', 'Calibri', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dark-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Timeline Hover States */
+.timeline-item:hover .timeline-icon-box {
+  transform: translateY(-4px);
+  border-color: var(--dark-red);
+  background: var(--dark-red);
+  box-shadow: 0 8px 20px rgba(148, 25, 28, 0.25);
+}
+
+.timeline-item:hover .timeline-svg {
+  stroke: var(--white);
+  transform: scale(1.08);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--dark-red);
+  transform: scale(1.25);
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(148, 25, 28, 0.15);
+}
+
+.timeline-item:hover .timeline-heading {
+  color: var(--dark-red);
+}
+
+/* Timeline Responsive Breakpoints */
+@media screen and (max-width: 991px) {
+  .convocation-about-section {
+    padding: 70px 0;
+  }
+
+  .about-timeline-intro {
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .about-timeline-desc {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .convocation-about-section {
+    padding: 50px 0;
+  }
+
+  .about-timeline-intro {
+    margin-bottom: 30px;
+  }
+
+  .about-timeline-title {
+    font-size: 28px;
+  }
+
+  .about-timeline-desc {
+    font-size: 15px;
+  }
+
+  .convocation-timeline {
+    padding-left: 0;
+  }
+
+  .timeline-track-line {
+    left: 20px;
+    top: 20px;
+    bottom: 25px;
+  }
+
+  .timeline-item {
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-node {
+    width: 42px;
+  }
+
+  .timeline-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .timeline-svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .timeline-content {
+    padding: 16px 16px;
+    border-radius: 14px;
+  }
+
+  .timeline-heading {
+    font-size: 15px;
+  }
+
+  .timeline-text {
+    font-size: 13px;
+  }
+}
