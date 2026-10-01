@@ -148,13 +148,8 @@ header {
   font-weight: 800;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--white);
-  background-color: var(--dark-red);
-  padding: 6px 18px;
-  border-radius: 30px;
+  color: #e18a28;
   margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(148, 25, 28, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Main Heading */
@@ -200,8 +195,8 @@ header {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 13px 30px;
-  border-radius: 50px;
+  padding: 15px 32px;
+  border-radius: 10px;
   text-decoration: none;
   text-transform: capitalize;
   transition: all 0.3s ease;
@@ -399,7 +394,6 @@ header {
   .slider-subheading {
     font-size: 11px;
     letter-spacing: 1.8px;
-    padding: 5px 14px;
     margin-bottom: 12px;
   }
 
@@ -792,5 +786,471 @@ h2.about-timeline-title span {
 
   .timeline-text {
     font-size: 13px;
+  }
+}
+
+/* ===================================================
+   ACADEMIC DRESS SECTION
+   =================================================== */
+
+.academic-dress-section {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 110px 0px;
+  background-image: url('../img/convocation-ceremony-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.academic-dress-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(148, 25, 28, 0.90) 0%, rgba(14, 21, 37, 0.88) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.academic-dress-section .container-port-xl {
+  position: relative;
+  z-index: 2;
+}
+
+.academic-dress-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Left Column Intro */
+.academic-dress-intro {
+  padding-right: 30px;
+}
+
+.academic-dress-label {
+  display: inline-block;
+  font-family: 'Inter Tight', 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #e18a28;
+  margin-bottom: 12px;
+}
+
+.academic-dress-title {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.academic-dress-divider {
+  width: 44px;
+  height: 3px;
+  background: #e18a28;
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+.academic-dress-desc {
+  font-family: 'Inter Tight', 'Calibri', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 0;
+  max-width: 440px;
+}
+
+/* Right Column Content & Grid */
+.academic-dress-content {
+  position: relative;
+}
+
+.academic-dress-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.academic-dress-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.academic-dress-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.academic-card-img-wrap {
+  flex: 0 0 38%;
+  max-width: 38%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.academic-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.academic-dress-card:hover .academic-card-img {
+  transform: scale(1.06);
+}
+
+.academic-card-body {
+  flex: 1 1 62%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.academic-card-title {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.academic-card-text {
+  font-family: 'Inter Tight', 'Calibri', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* CTA Button */
+.academic-dress-cta {
+  display: flex;
+  align-items: center;
+}
+
+.btn-academic-guidelines {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #94191c;
+  background: #ffffff;
+  padding: 15px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.btn-academic-guidelines i {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-academic-guidelines:hover {
+  background: #f3eed9;
+  color: #94191c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.btn-academic-guidelines:hover i {
+  transform: translateX(3px);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 991px) {
+  .academic-dress-intro {
+    padding-right: 0;
+    margin-bottom: 36px;
+  }
+
+  .academic-dress-desc {
+    max-width: 100%;
+  }
+
+  .academic-dress-grid {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .academic-dress-card {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .academic-dress-section {
+    padding: 60px 0;
+  }
+
+  .academic-dress-title {
+    font-size: 28px;
+  }
+
+  .academic-dress-desc {
+    font-size: 15px;
+  }
+
+  .academic-dress-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .academic-dress-card {
+    padding: 14px 16px;
+  }
+
+  .academic-card-img-wrap {
+    flex: 0 0 100px;
+    max-width: 100px;
+    height: 100px;
+  }
+
+  .btn-academic-guidelines {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .academic-dress-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .academic-card-img-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: 160px;
+    aspect-ratio: auto;
+  }
+
+  .academic-card-body {
+    width: 100%;
+  }
+}
+
+/* ===================================================
+   MAIN EVENT DETAILS / CONVOCATION CEREMONY 2026
+   =================================================== */
+
+.main-event-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 90px;
+  background-color: #fdfbf7;
+  overflow: hidden;
+}
+
+.main-event-section .container-port-xl {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-event-content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Header Area */
+.main-event-header {
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+
+.main-event-label {
+  display: inline-block;
+  font-family: 'Inter Tight', 'Manrope', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #e18a28;
+  margin-bottom: 12px;
+}
+
+.main-event-title {
+  font-family: 'Inter Tight', 'Manrope', Georgia, serif;
+  font-size: clamp(34px, 4vw, 50px);
+  font-weight: 800;
+  color: #17233e;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.main-event-title .event-year-highlight {
+  color: #94191c;
+  font-weight: 800;
+}
+
+.main-event-desc {
+  font-family: 'Inter Tight', 'Calibri', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #596579;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* 4 Cards Grid */
+.main-event-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  width: 100%;
+}
+
+.event-info-card {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 215, 205, 0.75);
+  border-radius: 14px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 160px;
+  box-shadow: 0 8px 24px rgba(23, 35, 62, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.event-info-card:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  border-color: rgba(225, 138, 40, 0.45);
+  box-shadow: 0 12px 28px rgba(23, 35, 62, 0.08);
+}
+
+.event-card-icon {
+  width: 28px;
+  height: 28px;
+  color: #e18a28;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.event-card-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: #94191c;
+}
+
+.event-card-title {
+  font-family: 'Inter Tight', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #17233e;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.event-card-text {
+  font-family: 'Inter Tight', 'Calibri', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6c788a;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1199px) {
+  .main-event-section {
+    padding: 80px 0 70px;
+  }
+
+  .main-event-cards-grid {
+    gap: 14px;
+  }
+
+  .event-info-card {
+    padding: 20px 16px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main-event-section {
+    padding: 70px 0 60px;
+  }
+
+  .main-event-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main-event-section {
+    padding: 50px 0;
+  }
+
+  .main-event-title {
+    font-size: 28px;
+  }
+
+  .main-event-desc {
+    font-size: 15px;
+  }
+
+  .main-event-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .event-info-card {
+    min-height: auto;
+    padding: 18px 16px;
   }
 }
