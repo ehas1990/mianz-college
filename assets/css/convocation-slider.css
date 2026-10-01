@@ -466,6 +466,9 @@ header {
 /* ===================================================
    JOURNEY TO GRADUATION — ABOUT SECTION & TIMELINE
    =================================================== */
+h2.about-timeline-title span {
+  color: #94191c;
+}
 
 .submain {
   position: relative;
@@ -479,7 +482,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 280px 0;
+  padding: 280px 0px 80px;
   overflow: hidden;
   width: 100%;
 }
@@ -715,7 +718,7 @@ header {
 /* Timeline Responsive Breakpoints */
 @media screen and (max-width: 991px) {
   .convocation-about-section {
-    padding: 70px 0;
+    padding: 100px 0px 50px;
   }
 
   .about-timeline-intro {
@@ -733,7 +736,7 @@ header {
 
 @media screen and (max-width: 767px) {
   .convocation-about-section {
-    padding: 50px 0;
+    padding: 100px 0px 30px;
   }
 
   .about-timeline-intro {
