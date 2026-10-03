@@ -418,9 +418,14 @@ header {
     padding: 11px 18px;
     text-align: center;
   }
-
+.submain {
+    position: relative;
+    background-color: #fff;
+    margin-top: -151px;
+}
   .convocation-countdown-section {
     padding: 30px 0 40px;
+    margin-top:-210px;
   }
 
   .convocation-countdown {
